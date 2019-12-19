@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SwiftUIDemo
 //
-//  Created by 鲍志轶 on 2019/12/9.
+//  Created by 鲍志轶 on 2019/12/17.
 //  Copyright © 2019 鲍志轶. All rights reserved.
 //
 
@@ -10,7 +10,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        TabView {
+            CategoryHome().environmentObject(UserData())
+                .tabItem {
+                    Text("Landmark")
+            }
+
+            Badge()
+                .tabItem {
+                Text("Badge")
+            }
+
+            HikeView()
+                .tabItem {
+                Text("HikeView")
+            }
+        }
     }
 }
 
